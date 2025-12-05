@@ -1,0 +1,64 @@
+/* HeroSection.css - Configurações de Fonte */
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@300;400;500;600&display=swap');
+@import 'tailwindcss';
+
+/* Aplicação das fontes personalizadas */
+
+/* Poppins para títulos e elementos com classe font-display */
+.font-display,
+h1.font-display,
+h2.font-display {
+  font-family: 'Poppins', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+}
+
+/* Inter para textos do corpo e parágrafos */
+p,
+.font-body {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+}
+
+/* Ajustes de legibilidade */
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Responsividade de fonte para hero section */
+@media (max-width: 640px) {
+  .hero-title {
+    font-size: 1.25rem; /* 20px */
+    line-height: 1.3;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.875rem; /* 14px */
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 641px) and (max-width: 768px) {
+  .hero-title {
+    font-size: 1.5rem; /* 24px */
+    line-height: 1.3;
+  }
+  
+  .hero-subtitle {
+    font-size: 0.9375rem; /* 15px */
+    line-height: 1.5;
+  }
+}
+
+@media (min-width: 769px) {
+  .hero-title {
+    font-size: 1.875rem; /* 30px */
+    line-height: 1.25;
+  }
+  
+  .hero-subtitle {
+    font-size: 1rem; /* 16px */
+    line-height: 1.6;
+  }
+}
