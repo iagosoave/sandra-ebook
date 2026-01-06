@@ -2,6 +2,7 @@ import React from 'react';
 import HeroSection from './components/HeroSection';
  import BenefitsSection  from './components/BenefitsSection';
  import Formsection   from './components/Formsection';
+ import AuthoritySection   from './components/AuthoritySection';
 
 
 const App = () => {
@@ -9,6 +10,7 @@ const App = () => {
     <div className="min-h-screen bg-white overflow-x-hidden">
       <HeroSection />
       <BenefitsSection  />
+      <AuthoritySection  />
       <Formsection   />
       
   

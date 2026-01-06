@@ -6,7 +6,7 @@ const BenefitsSection = () => {
     {
       number: "01",
       title: "Planejamento Estratégico Claro",
-      description: "Aprenda a criar uma visão institucional com indicadores de impacto e responsabilidades bem distribuídas."
+      description: "Crie uma visão institucional com indicadores de impacto e responsabilidades bem distribuídas."
     },
     {
       number: "02",
@@ -41,16 +41,6 @@ const BenefitsSection = () => {
         
         {/* Header */}
         <div className="text-center mb-12 md:mb-16">
-          <motion.p 
-            className="text-[#1a2e49] font-semibold text-sm uppercase tracking-wide mb-3"
-            initial={{ opacity: 0, y: 20 }}
-            whileInView={{ opacity: 1, y: 0 }}
-            viewport={{ once: true }}
-            transition={{ duration: 0.5 }}
-          >
-            <span className="text-[#c1a05d]"></span> O que você vai aprender
-          </motion.p>
-          
           <motion.h2 
             className="font-display text-3xl md:text-4xl font-bold text-[#1a2e49] mb-4"
             initial={{ opacity: 0, y: 20 }}
@@ -58,7 +48,7 @@ const BenefitsSection = () => {
             viewport={{ once: true }}
             transition={{ duration: 0.5, delay: 0.1 }}
           >
-            Transforme sua escola com os <span className="text-[#c1a05d]">5 Pontos Críticos</span>
+            Potencialize sua liderança com <span className="text-[#c1a05d]">Método comprovado</span>
           </motion.h2>
           
           <motion.p 

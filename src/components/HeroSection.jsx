@@ -84,7 +84,7 @@ const HeroSection = () => {
               className="font-display text-xl sm:text-2xl font-bold leading-tight text-[#ffffff] px-2"
               variants={fadeInUp}
             >
-              Pare de apagar incêndios e construa uma <span className="text-[#c1a05d]">escola de excelência</span> com método e resultados previsíveis
+              Supere cinco grandes desafios que comprometem os resultados de uma <span className="text-[#c1a05d]">escola de excelência</span>, construindo uma liderança com método e resultados previsíveis.
             </motion.h1>
             
             <motion.p 
@@ -197,7 +197,7 @@ const HeroSection = () => {
                 className="font-display text-2xl md:text-3xl font-bold leading-tight text-[#ffffff]"
                 variants={fadeInUp}
               >
-                Pare de apagar incêndios e construa uma <span className="text-[#c1a05d]">escola de excelência</span> com método e resultados previsíveis
+                Supere cinco grandes desafios que comprometem os resultados de uma <span className="text-[#c1a05d]">escola de excelência</span>, construindo uma liderança com método e resultados previsíveis.
               </motion.h1>
               
               <motion.h2 
