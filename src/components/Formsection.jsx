@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { motion } from 'framer-motion';
+import ebookPdf from './5 Pontos Críticos – Sandra Tonidandel.pdf';
 
 const FormSection = () => {
   const [formData, setFormData] = useState({
@@ -11,6 +12,9 @@ const FormSection = () => {
   const [errors, setErrors] = useState({});
   const [isSubmitting, setIsSubmitting] = useState(false);
   const [submitSuccess, setSubmitSuccess] = useState(false);
+
+  // URL do Google Apps Script
+  const GOOGLE_SCRIPT_URL = 'https://script.google.com/macros/s/AKfycbyfM4gdCmsYC97HJH5oOgSarlfhdwO1W15M-jvZ0WZ44_J4TE3Q90GAnyEgCP1v_t85nA/exec';
 
   // Validação de email
   const validateEmail = (email) => {
@@ -33,6 +37,16 @@ const FormSection = () => {
     } else {
       return cleaned.replace(/(\d{2})(\d{5})(\d{4})/, '($1) $2-$3');
     }
+  };
+
+  // Função para fazer o download do PDF
+  const downloadEbook = () => {
+    const link = document.createElement('a');
+    link.href = ebookPdf;
+    link.download = '5 Pontos Críticos – Sandra Tonidandel.pdf';
+    document.body.appendChild(link);
+    link.click();
+    document.body.removeChild(link);
   };
 
   // Handle input change
@@ -98,17 +112,18 @@ const FormSection = () => {
     setIsSubmitting(true);
 
     try {
-      // Aqui você pode integrar com sua API ou Google Forms
-      // Por enquanto, vou simular um envio
-      await new Promise(resolve => setTimeout(resolve, 1500));
+      // Enviar para o Google Sheets
+      await fetch(GOOGLE_SCRIPT_URL, {
+        method: 'POST',
+        mode: 'no-cors',
+        headers: {
+          'Content-Type': 'application/json',
+        },
+        body: JSON.stringify(formData)
+      });
 
-      // Redirecionar para o Google Forms com os dados preenchidos
-      const googleFormUrl = 'https://docs.google.com/forms/d/e/1FAIpQLSe49fG1imc09O3aIUgmQlqedma3wtn1JP4ZwZv50JNi36zCBg/viewform';
-      
-      // Você pode adicionar parâmetros se souber os entry IDs do seu Google Form
-      // const url = `${googleFormUrl}?entry.123456=${encodeURIComponent(formData.name)}&entry.789012=${encodeURIComponent(formData.email)}`;
-      
-      window.open(googleFormUrl, '_blank');
+      // Fazer o download do eBook
+      downloadEbook();
       
       setSubmitSuccess(true);
       setFormData({ name: '', email: '', phone: '' });
@@ -201,19 +216,17 @@ const FormSection = () => {
                       </svg>
                     </div>
                     <h3 className="font-display text-xl sm:text-2xl font-bold text-white mb-2">
-                      Cadastro Realizado!
+                      Download Iniciado!
                     </h3>
                     <p className="text-white/80 text-sm sm:text-base mb-6 px-4">
-                      Abrimos uma nova aba com o formulário. Se não abriu, clique no botão abaixo.
+                      O download do eBook foi iniciado automaticamente. Caso não tenha iniciado, clique no botão abaixo.
                     </p>
-                    <a
-                      href="https://docs.google.com/forms/d/e/1FAIpQLSe49fG1imc09O3aIUgmQlqedma3wtn1JP4ZwZv50JNi36zCBg/viewform"
-                      target="_blank"
-                      rel="noopener noreferrer"
+                    <button
+                      onClick={downloadEbook}
                       className="inline-block font-display bg-[#c1a05d] text-white font-bold px-6 py-3 rounded-full text-sm hover:bg-[#d4b36d] transition-colors duration-300 shadow-lg"
                     >
-                      ACESSAR FORMULÁRIO
-                    </a>
+                      BAIXAR EBOOK NOVAMENTE
+                    </button>
                   </div>
                 ) : (
                   <form onSubmit={handleSubmit} className="space-y-4 sm:space-y-6">

@@ -3,8 +3,8 @@ import { motion } from 'framer-motion';
 import { ArrowRight } from 'lucide-react';
 
 // Import das imagens
-import bannerDesktop from './banner.jpeg';
-import bannerMobile from './mobile.jpeg';
+import bannerDesktop from './banner.png';
+import bannerMobile from './mobile.png';
 import logo from './logo.png';
 
 const HeroSection = () => {
@@ -81,7 +81,7 @@ const HeroSection = () => {
           {/* Título e Texto - COPY MELHORADA */}
           <div className="space-y-3 sm:space-y-4 text-center">
             <motion.h1 
-              className="font-display text-xl sm:text-2xl font-bold leading-tight text-[#ffffff] px-2"
+              className="font-display text-lg sm:text-xl font-bold leading-tight text-[#ffffff] px-2"
               variants={fadeInUp}
             >
               Supere cinco grandes desafios que comprometem os resultados de uma <span className="text-[#c1a05d]">escola de excelência</span>, construindo uma liderança com método e resultados previsíveis.
@@ -194,7 +194,7 @@ const HeroSection = () => {
               
               {/* COPY MELHORADA - Desktop */}
               <motion.h1 
-                className="font-display text-2xl md:text-3xl font-bold leading-tight text-[#ffffff]"
+                className="font-display text-xl md:text-2xl font-bold leading-tight text-[#ffffff]"
                 variants={fadeInUp}
               >
                 Supere cinco grandes desafios que comprometem os resultados de uma <span className="text-[#c1a05d]">escola de excelência</span>, construindo uma liderança com método e resultados previsíveis.
